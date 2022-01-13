@@ -6,7 +6,7 @@
 /*   By: jthor <jthor@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:57:13 by jthor             #+#    #+#             */
-/*   Updated: 2022/01/13 20:47:23 by jthor            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:49:00 by jthor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
  * 2. String initialisation.                                                 *
  * 3. Fill buffer and offload to static variable until EOF or '\n'.          *
  * 4. Return                                                                 *
- * 		a) NULL if nothing is read and static variable is empty.             *
- * 		b) The next line in the file, processed by the function final_line.  *
+ *      a) NULL if nothing is read and static variable is empty.             *
+ *      b) The next line in the file, processed by the function final_line.  *
  *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -96,7 +96,7 @@ void	handle_buff(char **stat_str, char **buff)
  * stat_str = "Hello\nWorld\0"                                               *
  *                                                                           *
  * AFTER                                                                     *
- * ret		= "Hello\n"                                                      *
+ * ret      = "Hello\n"                                                      *
  * stat_str = "World\0"                                                      *
  *                                                                           *
  * In the case of no newline,                                                *
@@ -105,7 +105,7 @@ void	handle_buff(char **stat_str, char **buff)
  * stat_str = "Hello World\0"                                                *
  *                                                                           *
  * AFTER                                                                     *
- * ret 		= "Hello World\0"                                                *
+ * ret      = "Hello World\0"                                                *
  * stat_str = <freed>                                                        *
  *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
