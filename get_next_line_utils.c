@@ -6,16 +6,16 @@
 /*   By: jthor <jthor@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:57:40 by jthor             #+#    #+#             */
-/*   Updated: 2022/01/13 19:03:05 by jthor            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:59:39 by jthor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Standard function to get the length of the string str.					 *
- *																			 *
+ *                                                                           *
+ * Standard function to get the length of the string str.                    *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 size_t	ft_strlen(char const *str)
@@ -29,10 +29,10 @@ size_t	ft_strlen(char const *str)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Standard function to check for the existence of the character c in the	 *
- * string s.																 *
- *																			 *
+ *                                                                           *
+ * Standard function to check for the existence of the character c in the    *
+ * string s.                                                                 *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 char	*ft_strchr(char const *s, int c)
@@ -47,9 +47,9 @@ char	*ft_strchr(char const *s, int c)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Standard function to allocate memory and concatenate s2 to s1.			 *
- *																			 *
+ *                                                                           *
+ * Standard function to allocate memory and concatenate s2 to s1.            *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -70,10 +70,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * A slightly modified version on ft_strdup, where the parameter len is		 *
- * added to limit the length of the string s1 that is duplicated.			 *
- *																			 *
+ *                                                                           *
+ * A slightly modified version of ft_strdup, where the parameter len is      *
+ * added to limit the length of the string s1 that is duplicated.            *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 char	*ft_strldup(char const *s1, int len)
@@ -97,14 +97,14 @@ char	*ft_strldup(char const *s1, int len)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Helper function that handles pointers. There are two modes, represented	 *
- * by 0 and 1.																 *
- *																			 *
- * 0 :- Initialises the pointer to be used as a string.						 *
- * 1 :- Frees the content of the pointer and assigns it to NULL, as a		 *
- * 		standard practice.													 *
- *																			 *
+ *                                                                           *
+ * Helper function that handles pointers. There are two modes, represented   *
+ * by 0 and 1.                                                               *
+ *                                                                           *
+ * 0 :- Initialises the pointer to be used as a string.                      *
+ * 1 :- Frees the content of the pointer and assigns it to NULL, as a        *
+ *      standard practice.                                                   *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 void	ft_handleptr(char **ptr, int mode)
