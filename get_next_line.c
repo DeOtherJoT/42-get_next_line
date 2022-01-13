@@ -6,23 +6,23 @@
 /*   By: jthor <jthor@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:57:13 by jthor             #+#    #+#             */
-/*   Updated: 2022/01/13 19:35:01 by jthor            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:47:23 by jthor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Main get_next_line function. The procedure is as follows:				 *
- * 																			 *
- * 1. Simple error checks.													 *
- * 2. String initialisation.												 *
- * 3. Fill buffer and offload to static variable until EOF or '\n'.			 *
- * 4. Return																 *
- * 		a) NULL if nothing is read and static variable is empty.			 *
- * 		b) The next line in the file, processed by the function final_line.	 *
- *																			 *
+ *                                                                           *
+ * Main get_next_line function. The procedure is as follows:                 *
+ *                                                                           *
+ * 1. Simple error checks.                                                   *
+ * 2. String initialisation.                                                 *
+ * 3. Fill buffer and offload to static variable until EOF or '\n'.          *
+ * 4. Return                                                                 *
+ * 		a) NULL if nothing is read and static variable is empty.             *
+ * 		b) The next line in the file, processed by the function final_line.  *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 char	*get_next_line(int fd)
@@ -51,11 +51,11 @@ char	*get_next_line(int fd)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Helper function created to read the text file, fill the buffer, and NULL	 *
- * terminate it. The return value of the read() operation is used as a loop	 *
- * control, as well as to indicate if the EOF is reached.					 *
- *																			 *
+ *                                                                           *
+ * Helper function created to read the text file, fill the buffer, and NULL  *
+ * terminate it. The return value of the read() operation is used as a loop  *
+ * control, as well as to indicate if the EOF is reached.                    *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 ssize_t	read_buff(int fd, char **buff, ssize_t *read_ret)
@@ -69,11 +69,11 @@ ssize_t	read_buff(int fd, char **buff, ssize_t *read_ret)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Helper function created to offload the filled buffer to the static		 *
- * variable. The variable temp temporarily holds the new line after			 *
- * concatenation while stat_str is freed in a proper manner.				 *
- *																			 *
+ *                                                                           *
+ * Helper function created to offload the filled buffer to the static        *
+ * variable. The variable temp temporarily holds the new line after          *
+ * concatenation while stat_str is freed in a proper manner.                 *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 void	handle_buff(char **stat_str, char **buff)
@@ -86,28 +86,28 @@ void	handle_buff(char **stat_str, char **buff)
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *																			 *
- * Helper function created to process the final line that may or may not	 *
- * include a '\n'. The basic idea is as follows								 *
- *																			 *
- * In the case of newline,													 *
- *																			 *
- * BEFORE																	 *
- * stat_str = "Hello\nWorld\0"												 *
- *																			 *
- * AFTER																	 *
- * ret		= "Hello\n"														 *
- * stat_str = "World\0"														 *
- *																			 *
- * In the case of no newline,												 *
- *																			 *
- * BEFORE																	 *
- * stat_str = "Hello World\0"												 *
- *																			 *
- * AFTER																	 *
- * ret 		= "Hello World\0"												 *
- * stat_str = <freed>														 *
- *																			 *
+ *                                                                           *
+ * Helper function created to process the final line that may or may not     *
+ * include a '\n'. The basic idea is as follows                              *
+ *                                                                           *
+ * In the case of newline,                                                   *
+ *                                                                           *
+ * BEFORE                                                                    *
+ * stat_str = "Hello\nWorld\0"                                               *
+ *                                                                           *
+ * AFTER                                                                     *
+ * ret		= "Hello\n"                                                      *
+ * stat_str = "World\0"                                                      *
+ *                                                                           *
+ * In the case of no newline,                                                *
+ *                                                                           *
+ * BEFORE                                                                    *
+ * stat_str = "Hello World\0"                                                *
+ *                                                                           *
+ * AFTER                                                                     *
+ * ret 		= "Hello World\0"                                                *
+ * stat_str = <freed>                                                        *
+ *                                                                           *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 char	*final_line(char **stat_str)
