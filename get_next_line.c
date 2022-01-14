@@ -6,7 +6,7 @@
 /*   By: jthor <jthor@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:57:13 by jthor             #+#    #+#             */
-/*   Updated: 2022/01/13 20:49:00 by jthor            ###   ########.fr       */
+/*   Updated: 2022/01/14 18:15:51 by jthor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ ssize_t	read_buff(int fd, char **buff, ssize_t *read_ret)
 	ssize_t	ret;
 
 	ret = read(fd, *buff, BUFFER_SIZE);
-	(*buff)[ret] = '\0';
+	if (ret > 0)
+		(*buff)[ret] = '\0';
 	*read_ret = ret;
 	return (ret);
 }
