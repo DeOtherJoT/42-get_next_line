@@ -1,4 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jthor <jthor@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/21 14:34:49 by jthor             #+#    #+#             */
+/*   Updated: 2023/03/21 14:34:50 by jthor            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
+
+/*
+A slightly modified version of the original get_next_line function, that
+allows for multiple files to be read at once, with multiple static
+variables in use.
+
+The magic number 4896 is taken from the soft limit of the number of file
+descriptors that can be open at one time, obtained by running ulimit -n on
+an open shell terminal.
+*/
 
 char	*get_next_line(int fd)
 {
